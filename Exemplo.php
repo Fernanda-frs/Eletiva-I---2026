@@ -9,7 +9,8 @@
 <body> 
 <div class="container py-3">
 <h1>Primeiro exemplo PHP</h1>
-<form method="post">
+<h3>Data de hoje: <?php echo date("d/m/Y"); ?> </h3>
+<form method="post" action="resposta.php">
 <div class="mb-3">
               <label for="nome" class="form-label">Informe o seu nome:</label>
               <input type="text" id="nome" name="nome" class="form-control" required="">
