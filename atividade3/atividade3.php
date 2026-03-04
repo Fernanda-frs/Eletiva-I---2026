@@ -22,18 +22,37 @@
   <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $valor= $_POST['valor'];
-        if($valor == "+")
+        /*if($valor == "+")
           echo "<p>Sinal de soma!</p>";
         elseif($valor == "-")
-          echo"<p>Sinal de subtração</p>";
+          echo"<p>Sinal de subtração!</p>";
         elseif($valor == "*"){
-          echo"<p>Sinal de multiplicação</p>";
+          echo"<p>Sinal de multiplicação!</p>";
         }
         elseif($valor == "/")
-          echo "<p>Sinal de divisão</p>";
+          echo "<p>Sinal de divisão!</p>";
         else {
-          echo "<p>Sinal inválido</p>";
+          echo "<p>Sinal inválido!</p>";
+        }*/ 
+
+        switch($valor){
+          case "+":
+            echo "<p>Sinal de soma!</p>";
+            break;
+          case "-":
+            echo"<p>Sinal de subtração!</p>";
+            break;
+          case "*":
+            echo"<p>Sinal de multiplicação!</p>";
+            break;
+          case "/":
+            echo "<p>Sinal de divisão!</p>";
+            break;
+          default:
+            echo "<p>Sinal Inválido!</p>"; 
+            break;
         }
+        
       }
 
   ?>
