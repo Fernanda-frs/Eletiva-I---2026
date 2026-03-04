@@ -22,6 +22,7 @@
   <?php
       if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $valor= $_POST['valor'];
+        
         /*if($valor == "+")
           echo "<p>Sinal de soma!</p>";
         elseif($valor == "-")
@@ -35,7 +36,7 @@
           echo "<p>Sinal inválido!</p>";
         }*/ 
 
-        switch($valor){
+        /*switch($valor){
           case "+":
             echo "<p>Sinal de soma!</p>";
             break;
@@ -51,6 +52,11 @@
           default:
             echo "<p>Sinal Inválido!</p>"; 
             break;
+        }*/
+
+        for($i =1; $i <=10; $i++){
+          $resultado = $valor * $i;
+          echo"<p> $valor * $i = $resultado</p>";
         }
         
       }
