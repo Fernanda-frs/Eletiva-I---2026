@@ -52,6 +52,7 @@
         $valor6= $_POST['valor'];
         $valor7= $_POST['valor'];
         
+        if 
 
         }
         ?>
