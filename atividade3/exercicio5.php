@@ -11,7 +11,7 @@
 <h1></h1>
 <form method="post">
 <div class="mb-3">
-              <label for="valor1 " class="form-label">Informe o valor do produto(R$): </label>
+              <label for="valor1 " class="form-label">Informe um valor: </label>
               <input type="number" id="valor1" name="valor1" class="form-control" required="">
             </div><div class="mb-3">
               
@@ -22,7 +22,44 @@
         $valor1 = $_POST['valor1'];
         
         switch($valor1){
-          case'1'
+          case"1":
+            echo "<p> 1 - Janeiro </p>";
+            break;
+          case"2":
+            echo "<p> 2- Fevereiro </p>";
+            break;
+          case"3":
+            echo "<p> 3- Março </p>";
+            break;
+          case"4": 
+            echo "<p> 4 - Abril </p>";
+            break;
+          case"5":
+            echo "<p> 5 - Maio </p>";
+            break;
+          case"6":
+            echo "<p> 6 - Junho </p>";
+            break;
+          case"7":
+            echo "<p> 7 - Julho </p>";
+            break;
+          case"8": 
+            echo "<p> 8 - Agosto </p>";
+            break;
+          case"9": 
+            echo "<p> 9 - Setembro </p>";
+          case"10": 
+            echo "<p> 10 - Outubro </p>";
+            break;
+          case "11": 
+            echo "<p> 11 - Novembro </p>";
+            break;
+          case "12":
+            echo "<p> 12 - Dezembro </p>";
+            break;
+          default:
+            echo "<p>Valor inválido!!!</p>";
+            break; 
         }
       
      }
