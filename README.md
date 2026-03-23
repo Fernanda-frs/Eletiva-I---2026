@@ -17,3 +17,10 @@ while($i<= 5){
 
 
 ?>
+
+
+ {
+  "key": "ctrl+t",
+  "command": "openInTerminal",
+  "when": "filesExplorerFocus"
+   }
