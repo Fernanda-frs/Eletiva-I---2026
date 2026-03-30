@@ -23,8 +23,7 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
-    <div class="container bg-white p-4 shadow-sm ">
-    <h5 class="mb-4 fw-bold">Formulário 2</h5>
+    <div class="container bg-white p-4 ">
     <form>
         <div class="row g-5 mb-3">
             <div class="col-md-1">
