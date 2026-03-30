@@ -43,17 +43,38 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form> 
         <?php
-      if ($_SERVER['REQUEST_METHOD'] == "POST"){
-        $valor1= $_POST['valor'];
-        $valor2= $_POST['valor'];
-        $valor3= $_POST['valor'];
-        $valor4= $_POST['valor'];
-        $valor5= $_POST['valor'];
-        $valor6= $_POST['valor'];
-        $valor7= $_POST['valor'];
-        
-        if 
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
+            $valores = array(
+                $_POST['valor1'],
+                $_POST['valor2'],
+                $_POST['valor3'],
+                $_POST['valor4'],
+                $_POST['valor5'],
+                $_POST['valor6'],
+                $_POST['valor7']
+         );
+
+   
+            for ($i = 0; $i < 7; $i++) {
+                $valores[$i] = floatval($valores[$i]);
+            }
+
+    
+            $menor = $valores[0];
+            $posicao = 1;
+
+            for ($i = 1; $i < 7; $i++) {
+                if ($valores[$i] < $menor) {
+                    $menor = $valores[$i];
+                    $posicao = $i + 1; // +1 porque posição começa em 1
+                }
+            }
+
+            echo "<div class='alert alert-success mt-3'>";
+            echo "Menor valor: <strong>$menor</strong><br>";
+            echo "Posição: <strong>$posicao</strong>";
+            echo "</div>";
         }
         ?>
 
