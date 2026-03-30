@@ -67,7 +67,7 @@
             for ($i = 1; $i < 7; $i++) {
                 if ($valores[$i] < $menor) {
                     $menor = $valores[$i];
-                    $posicao = $i + 1; // +1 porque posição começa em 1
+                    $posicao = $i + 1; 
                 }
             }
 
