@@ -21,14 +21,15 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $valor1 = $_POST['valor1'];
         
-        $soma = 0;
-        $i = 1;
-        while($i<= $valor1) {
-            $soma += $i;
-            $i++;
-        }
-        echo "<p> A soma dos números de 1 a $valor1 é: $soma</p>";  
+        $i = $valor1;
+      
+
+    do {
+        echo "Número:<p> $i </p>";
+        $i--;
+    } while ($i >= 1);
     }
+
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </div>
