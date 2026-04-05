@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "preco" => $preco
         ];
 
-        ksort($produtos[$codigo]); 
     }
 
     uasort($produtos, function($a, $b) {
