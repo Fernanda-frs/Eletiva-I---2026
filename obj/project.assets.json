@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Fernanda\\.nuget\\packages\\": {}
+    "C:\\Users\\aluno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fernanda\\Desktop\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
       "projectName": "Eletiva-I---2026",
-      "projectPath": "C:\\Users\\Fernanda\\Desktop\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
-      "packagesPath": "C:\\Users\\Fernanda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fernanda\\Desktop\\Eletiva-I---2026\\obj\\",
+      "projectPath": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
+      "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Fernanda\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.419/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
