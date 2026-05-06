@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\Desktop\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
       "projectName": "Eletiva-I---2026",
-      "projectPath": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
+      "projectPath": "C:\\Users\\aluno\\Desktop\\Eletiva-I---2026\\Eletiva-I---2026.csproj",
       "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Documents\\Eletiva-I---2026\\obj\\",
+      "outputPath": "C:\\Users\\aluno\\Desktop\\Eletiva-I---2026\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config"
