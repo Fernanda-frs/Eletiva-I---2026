@@ -88,30 +88,59 @@ Voltar
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-try{
+    try{
 
-$stmt = $pdo->prepare(
-"DELETE FROM aluno
-WHERE id=?"
-);
+        // Verifica se o aluno possui matrícula
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(*) AS total
+             FROM matricula
+             WHERE aluno_id = ?"
+        );
 
-if($stmt->execute([$id])){
+        $stmt->execute([$id]);
 
-header("Location: alunos.php");
-exit();
+        $total = $stmt->fetch();
+
+        if($total['total'] > 0){
+
+            echo "
+            <script>
+                alert('Aluno matriculado, é necessário cancelar a matrícula antes de excluir o aluno.');
+            </script>
+            ";
+
+        }else{
+
+            $stmt = $pdo->prepare(
+                'DELETE FROM aluno WHERE id=?'
+            );
+
+            if($stmt->execute([$id])){
+
+                echo "
+                <script>
+                    alert('Aluno excluído com sucesso.');
+                    window.location='alunos.php';
+                </script>
+                ";
+
+                exit();
+            }
+        }
+
+    }catch(Exception $e){
+
+        echo "
+        <script>
+            alert('Erro: ".$e->getMessage()."');
+        </script>
+        ";
+
+    }
 
 }
-
-}catch(Exception $e){
-
-echo "Erro: ".$e->getMessage();
-
-}
-
-}
-
 ?>
 
 <?php

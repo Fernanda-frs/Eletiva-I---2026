@@ -3,19 +3,13 @@
 require_once('cabecalho.php');
 require_once('conexao.php');
 
-$stmt = $pdo->query(
-"SELECT a.*,
-        p.nome professor,
-        pl.descricao plano
+$stmt = $pdo->query("SELECT a.*, p.nome professor, pl.descricao plano FROM aluno a
+                    INNER JOIN professor p
+                    ON p.id = a.professor_id
 
-FROM aluno a
-
-INNER JOIN professor p
-ON p.id = a.professor_id
-
-INNER JOIN plano pl
-ON pl.id = a.plano_id"
-);
+                    INNER JOIN plano pl
+                    ON pl.id = a.plano_id"
+                    );
 
 $resultado = $stmt->fetchAll();
 
