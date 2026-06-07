@@ -24,3 +24,5 @@ while($i<= 5){
   "command": "openInTerminal",
   "when": "filesExplorerFocus"
    }
+
+Vídeo sistema academia: https://drive.google.com/drive/folders/14H8ocByrFS2q6teOOWsL_jJZq0CguLeQ?usp=sharing
