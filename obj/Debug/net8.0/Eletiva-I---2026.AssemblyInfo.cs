@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eletiva-I---2026")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfa0f97bb6afbc2234e0d5c24f898ce89a8d698d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7cc45f6675860bc3a8346343443f2e4fe7f5b02e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eletiva-I---2026")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eletiva-I---2026")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
