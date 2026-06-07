@@ -32,6 +32,13 @@
                    Planos
                 </a>
             </li>
+            
+            <li>
+                <a class="dropdown-item"
+                   href="matriculas.php">
+                   Matrículas
+                </a>
+            </li>
 
         </ul>
     </li>
