@@ -16,16 +16,14 @@ $id = $_GET['id'];
 try{
 
 $stmt = $pdo->prepare(
-
-"UPDATE aluno
-
-SET nome=?,
-    cpf=?,
-    telefone=?
-
-WHERE id=?"
-
+    "SELECT COUNT(*) AS total
+     FROM matricula
+     WHERE plano_id = ?"
 );
+
+$stmt->execute([$id]);
+
+$total = $stmt->fetch();
 
 if(
 $stmt->execute([

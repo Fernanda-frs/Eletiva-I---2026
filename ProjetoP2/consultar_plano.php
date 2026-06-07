@@ -5,20 +5,20 @@ require_once('conexao.php');
 
 try{
 
-$stmt = $pdo->prepare(
-"SELECT * FROM plano
-WHERE id=?"
-);
+    $stmt = $pdo->prepare(
+        "SELECT * FROM plano
+         WHERE id=?"
+    );
 
-$stmt->execute([
-$_GET['id']
-]);
+    $stmt->execute([
+        $_GET['id']
+    ]);
 
-$resultado = $stmt->fetch();
+    $resultado = $stmt->fetch();
 
 }catch(Exception $e){
 
-echo "Erro: ".$e->getMessage();
+    echo "Erro: ".$e->getMessage();
 
 }
 
@@ -34,19 +34,13 @@ action="consultar_plano.php?id=<?= $resultado['id'] ?>">
 <div class="card-body">
 
 <p>
-
 <strong>Descrição:</strong>
-
 <?= $resultado['descricao'] ?>
-
 </p>
 
 <p>
-
 <strong>Valor:</strong>
-
-R$
-<?= number_format(
+R$ <?= number_format(
 $resultado['valor'],
 2,
 ',',
@@ -56,13 +50,9 @@ $resultado['valor'],
 </p>
 
 <p>
-
 <strong>Duração:</strong>
-
 <?= $resultado['duracao_meses'] ?>
-
 meses
-
 </p>
 
 </div>
@@ -74,7 +64,6 @@ meses
 <button
 type="submit"
 class="btn btn-danger"
-
 onclick="return confirm(
 'Deseja realmente excluir este plano?'
 );">
@@ -93,33 +82,63 @@ Voltar
 </form>
 
 <?php
-
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-try{
+    try{
 
-$stmt = $pdo->prepare(
-"DELETE FROM plano
-WHERE id=?"
-);
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(*) AS total
+             FROM matricula
+             WHERE plano_id = ?"
+        );
 
-if($stmt->execute([$id])){
+        $stmt->execute([$id]);
 
-header("Location: planos.php");
-exit();
+        $total = $stmt->fetch();
+
+        if($total['total'] > 0){
+
+            echo "
+            <script>
+                alert('Existem matrículas vinculadas a este plano. É necessário cancelar as matrículas antes da exclusão.');
+            </script>
+            ";
+
+        }else{
+
+            $stmt = $pdo->prepare(
+                "DELETE FROM plano
+                 WHERE id = ?"
+            );
+
+            if($stmt->execute([$id])){
+
+                echo "
+                <script>
+                    alert('Plano excluído com sucesso.');
+                    window.location='planos.php';
+                </script>
+                ";
+
+                exit();
+
+            }
+
+        }
+
+    }catch(Exception $e){
+
+        echo "
+        <script>
+            alert('Erro: ".addslashes($e->getMessage())."');
+        </script>
+        ";
+
+    }
 
 }
-
-}catch(Exception $e){
-
-echo "Erro: ".$e->getMessage();
-
-}
-
-}
-
 ?>
 
 <?php

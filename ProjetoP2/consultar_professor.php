@@ -88,27 +88,68 @@ Voltar
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-try{
+    try{
 
-$stmt = $pdo->prepare(
-"DELETE FROM professor
-WHERE id=?"
-);
+        // Verifica se existem matrículas vinculadas ao professor
+        $stmt = $pdo->prepare(
+                    "SELECT COUNT(*) AS total
+                    FROM matricula
+                    WHERE professor_id = ?"
+                    );
 
-if($stmt->execute([$id])){
+$stmt->execute([$id]);
 
-header("Location: professores.php");
-exit();
+$total = $stmt->fetch();
 
-}
+if($total['total'] > 0){
 
-}catch(Exception $e){
+           echo "
+            <script>
+                alert('Existem matrículas vinculadas a este professor. É necessário cancelar as matrículas antes da exclusão.');
+                </script>
+                ";
 
-echo "Erro: ".$e->getMessage();
+        }else{
 
-}
+            // Exclui o professor
+            $stmt = $pdo->prepare(
+                'DELETE FROM professor WHERE id = ?'
+            );
+
+            if($stmt->execute([$id])){
+
+                echo "
+                <script>
+                    alert('Professor excluído com sucesso.');
+                    window.location='professores.php';
+                </script>
+                ";
+
+                exit();
+
+            }else{
+
+                echo "
+                <script>
+                    alert('Erro ao excluir professor.');
+                </script>
+                ";
+
+            }
+
+        }
+
+    }catch(Exception $e){
+
+        echo "
+        <script>
+            alert('Erro: ".addslashes($e->getMessage())."');
+        </script>
+        ";
+
+    }
 
 }
 
