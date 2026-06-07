@@ -1,23 +1,39 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Cadastro</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>
+
+Cadastro
+
+</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
 </head>
 
 <body class="bg-light">
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
+<div
+class="container d-flex justify-content-center align-items-center vh-100">
 
-<div class="card shadow p-4" style="width:100%; max-width:400px;">
+<div
+class="card shadow p-4"
+style="width:100%;max-width:400px;">
 
-<h3 class="text-center mb-4">
+<h3 class="text-center">
 
-Cadastro de Usuário
+Cadastro
 
 </h3>
 
@@ -60,7 +76,6 @@ required>
 </div>
 
 <button
-type="submit"
 class="btn btn-success w-100">
 
 Cadastrar
@@ -71,9 +86,9 @@ Cadastrar
 
 <?php
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if($_SERVER['REQUEST_METHOD']=="POST"){
 
-require_once('conexao.php');
+require_once("conexao.php");
 
 $nome = $_POST['nome'];
 $email = $_POST['email'];
@@ -83,31 +98,23 @@ $_POST['senha'],
 PASSWORD_BCRYPT
 );
 
-try{
-
 $stmt = $pdo->prepare(
-
 "INSERT INTO usuario
 (nome,email,senha)
 VALUES(?,?,?)"
-
 );
 
-if($stmt->execute([
+if(
+$stmt->execute([
 $nome,
 $email,
 $senha
-])){
+])
+){
 
 echo "<p class='text-success mt-3'>
 Cadastro realizado!
 </p>";
-
-}
-
-}catch(Exception $e){
-
-echo "Erro: ".$e->getMessage();
 
 }
 
@@ -117,16 +124,18 @@ echo "Erro: ".$e->getMessage();
 
 <p class="text-center mt-3">
 
-Já possui conta?
-
 <a href="index.php">
-Entrar
+
+Voltar ao Login
+
 </a>
 
 </p>
 
 </div>
+
 </div>
 
 </body>
+
 </html>
